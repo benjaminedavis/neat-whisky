@@ -1,0 +1,25 @@
+<div class="memberdetails" >
+
+  <div class="membername"><%= @member.first_name %> <%= @member.last_name %></div>
+  <div><%= @member.email %></div>
+  <br>
+  <div>WHISKEYS SHARED: </div>
+
+  <div class="whiskeysshared">
+    <% @member.whiskeys.each do |x| %>
+    <div><%= link_to "#{x.name}", whiskey_path(x) %></div>
+    <% end %>
+  </div>
+<br>
+<div>COMMENTS MADE: </div>
+  <div class="commentsmade">
+    <% @member.comments.each do |x| %>
+    <div><%= x.whiskey.name %>: <%= x.comment %></div>
+    <% end %>
+
+
+  </div>
+
+</div>
+
+<td></td>

@@ -1,0 +1,17 @@
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+      <div class="barnav">
+        <ul class="nav navbar-nav">
+
+        <li><h1 class="logo"><a href="/">neat</a></h1></li>
+        <li><a><%= link_to "WHISKEYS", whiskeys_path %></a></li>
+        <li><a><%= link_to "EVENTS", events_path %></a></li>
+        <li><a><%= link_to "MEMBERS", members_path %></a></li>
+        <li><a><%= link_to 'LOGOUT', session_path(session), method: :delete %>
+        </ul>
+      </div>
+
+  </div>
+</nav>

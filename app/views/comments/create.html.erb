@@ -1,0 +1,11 @@
+<%= form_for @comment do |c| %>
+<div>NAME: <%= c.text_field :name %></div>
+<div>REGION: <%= c.text_field :region %></div>
+<div>COUNTRY: <%= c.text_field :country %></div>
+<div>TYPE: <%= c.text_field :wtype %></div>
+<div>MALT: <%= c.text_field :malt %></div>
+<div>AGE: <%= c.number_field :age %></div>
+<div>PRICE: $<%= c.number_field :price %></div>
+<div>ABV: <%= c.number_field :abv %></div>
+<div> <%= c.submit "Add Whiskey" %></div>
+<% end %>

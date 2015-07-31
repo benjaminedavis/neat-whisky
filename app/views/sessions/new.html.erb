@@ -1,0 +1,15 @@
+<div class="welcome"><p>announce yourself</div></p>
+
+  <div class="loginmod">
+    <div><%= form_tag sessions_path do %></div>
+    <div><%= label_tag "You, Sir. Name?" %></div>
+    <div><%= text_field_tag :email, params[:email] %></div>
+    <div><%= label_tag "The Password Is" %></div>
+    <div><%= password_field_tag :password %></div>
+  <br>
+  <div class="enterbutton">
+    <button class="btn btn-warning btn-md" type="submit">enter neat</button>
+  </div>
+  <div><% end %></div>
+
+</div>

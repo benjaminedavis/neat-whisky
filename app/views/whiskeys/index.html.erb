@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>NAME </th>
+      <th>REGION </th>
+      <th>COUNTRY </th>
+      <th>TYPE </th>
+      <th>MALT </th>
+      <th>AGE </th>
+      <th>PRICE </th>
+      <th>ABV </th>
+      <th>EVENT </th>
+      <th>MEMBER </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @whiskeys.each do |x| %>
+    <tr>
+      <td><div><%= link_to "#{x.name}", whiskey_path(x) %></div></td>
+      <td><div><%= x.region %></div></td>
+      <td><div><%= x.country %></div></td>
+      <td><div><%= x.wtype %></div></td>
+      <td><div><%= x.malt %></div></td>
+      <td><div><%= x.age %></div></td>
+      <td><div>$<%= x.price %></div></td>
+      <td><div><%= x.abv %></div></td>
+      <td><div><%= x.event.date %></div></td>
+      <td><div><%= x.member.first_name %> <%= x.member.last_name %></div></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

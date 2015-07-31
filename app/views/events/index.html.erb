@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>EVENT </th>
+      <th>DATE </th>
+      <th>HOST </th>
+      <th>THEME </th>
+      <th>DESCRIPTION </th>
+      <th> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |x| %>
+    <tr>
+      <td><div><%= link_to "#{x.id}", event_path(x) %></div></td>
+      <td><div><%= x.date %></div></td>
+      <td><div><%= x.host %></div></td>
+      <td><div><%= x.theme %></div></td>
+      <td><div><%= x.description %></div></td>
+      <td><div><%= %></div></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,2 @@
+module WhiskeyHelper
+end

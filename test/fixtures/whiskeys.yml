@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  region: MyString
+  country: MyString
+  type: 
+  malt: MyString
+  age: 1
+  price: 1
+  abv: 1.5
+  pic1: MyString
+  event_id: 
+  member_id: 
+
+two:
+  name: MyString
+  region: MyString
+  country: MyString
+  type: 
+  malt: MyString
+  age: 1
+  price: 1
+  abv: 1.5
+  pic1: MyString
+  event_id: 
+  member_id: 

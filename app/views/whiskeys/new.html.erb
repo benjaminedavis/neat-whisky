@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="whiskeypic" ><%= image_tag("http://generic.pixmac.com/4/royalty-free-stock-pictures-isolated-whiskey-bottle-and-glass-45487859.jpg", :alt => "Photo Not Available") %></div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="whiskeydesc">
+        <div class="whiskeyname"><%= "Add a Whiskey" %></div>
+
+      </div>
+        <br>
+        <div class="newwhiskeyinfo">
+          <%= form_for @whiskey do |f|%>
+          <div>NAME: <%= f.text_field :name %></div>
+          <div>REGION: <%= f.text_field :region %></div>
+          <div>COUNTRY: <%= f.text_field :country %></div>
+          <div>TYPE: <%= f.text_field :wtype %></div>
+          <div>MALT: <%= f.text_field :malt %></div>
+          <div>AGE: <%= f.text_field :age %></div>
+          <div>PRICE: $<%= f.text_field :price %></div>
+          <div>ABV: <%= f.text_field :abv %></div>
+          <div>EVENT: <%= f.text_field :event %></div>
+          <div>MEMBER: <%= f.text_field :member %></div>
+          <br>
+          <div> <%= f.submit "Add Whiskey", class: 'btn btn-success btn-sm' %></div>
+          <% end %>
+          </div>
+
+    </div>
+
+  </div>
+
+</div>

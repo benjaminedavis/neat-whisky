@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="whiskeypic" ><%= image_tag(@whiskey.pic1, :alt => "Photo Not Available") %></div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="whiskeydesc">
+        <div class="whiskeyname"><%= @whiskey.name %></div>
+        <div>REGION: <%= @whiskey.region %></div>
+        <div>COUNTRY: <%= @whiskey.country %></div>
+        <div>TYPE: <%= @whiskey.wtype %></div>
+        <div>MALT: <%= @whiskey.malt %></div>
+        <div>AGE: <%= @whiskey.age %></div>
+        <div>PRICE: $<%= @whiskey.price %></div>
+        <div>ABV: <%= @whiskey.abv %></div>
+        <div>EVENT: <%= @whiskey.event.date %></div>
+        <div>OWNER: <%= @whiskey.member.first_name %> <%= @whiskey.member.last_name %></div>
+      </div>
+        <br>
+      <div class="whiskeycomments">
+        <% @whiskey.comments.each do |x| %>
+
+        <div>Member <%= x.member.first_name %> <%= x.member.last_name %> says:</div>
+        <div> <%= x.comment %></div>
+        <br>
+        <% end %>
+      </div>
+
+      <div class="whiskeynewcomment pull-right">
+        <%= form_for @comment, url: whiskey_path(@whiskey.id) do |f| %>
+        <%= f.label "Add Your Comment" %>
+        <br>
+        <%= f.text_field :comment %>
+        <br>
+        <br>
+        <%= f.submit 'Add A Comment', class: 'btn btn-success btn-sm' %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
