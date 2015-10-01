@@ -20,6 +20,7 @@ Member.create(first_name:"Johnny", last_name:"Tu", email:"johnnyt@pacificwestlit
 Member.create(first_name:"John", last_name:"McLean", email:"jm@gmail.com", password: "testpass")
 Member.create(first_name:"Ed", last_name:"Vigdor", email:"ev@gmail.com", password: "testpass")
 Member.create(first_name:"Brian", last_name:"Patrick", email:"brianpatrickw@gmail.com", password: "testpass")
+Member.create(first_name:"Visi", last_name:"Tor", email:"test@test.com", password: "testpass")
 
 Event.create(date:"2006-05-20", host: "Andy Rackaskaus", theme: "The Inception!", description: "Single Malt Scotch")
 Event.create(date:"2006-07-15", host: "Kevin Robie", description: "Single Malt Scotch")

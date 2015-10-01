@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150729210549) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string   "comment"
     t.integer  "member_id"
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150729210549) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["member_id"], name: "index_comments_on_member_id"
-  add_index "comments", ["whiskey_id"], name: "index_comments_on_whiskey_id"
+  add_index "comments", ["member_id"], name: "index_comments_on_member_id", using: :btree
+  add_index "comments", ["whiskey_id"], name: "index_comments_on_whiskey_id", using: :btree
 
   create_table "event_members", force: :cascade do |t|
     t.integer  "event_id"
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 20150729210549) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "event_members", ["event_id"], name: "index_event_members_on_event_id"
-  add_index "event_members", ["member_id"], name: "index_event_members_on_member_id"
+  add_index "event_members", ["event_id"], name: "index_event_members_on_event_id", using: :btree
+  add_index "event_members", ["member_id"], name: "index_event_members_on_member_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.date     "date"
@@ -69,7 +72,13 @@ ActiveRecord::Schema.define(version: 20150729210549) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "whiskeys", ["event_id"], name: "index_whiskeys_on_event_id"
-  add_index "whiskeys", ["member_id"], name: "index_whiskeys_on_member_id"
+  add_index "whiskeys", ["event_id"], name: "index_whiskeys_on_event_id", using: :btree
+  add_index "whiskeys", ["member_id"], name: "index_whiskeys_on_member_id", using: :btree
 
+  add_foreign_key "comments", "members"
+  add_foreign_key "comments", "whiskeys"
+  add_foreign_key "event_members", "events"
+  add_foreign_key "event_members", "members"
+  add_foreign_key "whiskeys", "events"
+  add_foreign_key "whiskeys", "members"
 end
